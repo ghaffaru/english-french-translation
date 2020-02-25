@@ -15,4 +15,21 @@ word2index_inputs = input_tokenizer.word_index
 
 max_input_length = max(len(sentence) for sentence in input_integer_sequences)
 
-print(max_input_length);
+# print(max_input_length);
+
+output_tokenizer = Tokenizer(num_words=MAX_NUM_WORDS, filters='')
+
+output_tokenizer.fit_on_texts(load_data.output_sentences + load_data.output_sentences_inputs)
+
+output_integer_seq = output_tokenizer.texts_to_sequences(load_data.output_sentences)
+
+output_input_integer_seq = output_tokenizer.texts_to_sequences(load_data.output_sentences_inputs)
+
+word2idx_outputs = output_tokenizer.word_index
+
+# print('Total unique words in the output: %s' % len(word2idx_outputs))
+
+num_words_output = len(word2idx_outputs) + 1
+
+max_out_len = max(len(sen) for sen in output_integer_seq)
+# print("Length of longest sentence in the output: %g" % max_out_len)
