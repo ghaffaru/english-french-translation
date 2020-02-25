@@ -8,7 +8,7 @@ output_sentences_inputs = [] # input to the decoder in the translated language
 
 count = 0
 
-for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/eng-french-translation/data/english.txt', encoding='utf-8'):
+for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-french-translation/data/english.txt', encoding='utf-8'):
     count +=1
 
     if count > NUM_SENTENCES:
@@ -20,6 +20,23 @@ for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/eng-french-tr
 
 print(len(input_sentences))
 
+count1 = 0
+for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-french-translation/data/french.txt', encoding='utf-8'):
+    count1 +=1
+
+    if count1 > NUM_SENTENCES:
+        break
+    output = line.rstrip()
+
+    output_sentence = output + '<eos>'
+
+    output_sentence_input = '<sos>' + output
+
+    output_sentences.append(output_sentence)
+
+    output_sentences_inputs.append(output_sentence_input)
+
+print(len(output_sentences))
 
 
 
