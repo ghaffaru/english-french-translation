@@ -8,7 +8,7 @@ output_sentences_inputs = [] # input to the decoder in the translated language
 
 count = 0
 
-for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-french-translation/data/english.txt'):
+for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-french-translation/data/english.txt', encoding='utf-8'):
     count +=1
 
     if count > NUM_SENTENCES:
@@ -18,10 +18,10 @@ for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-frenc
 
     input_sentences.append(input_sentence)
 
-print(len(input_sentences))
+# print(len(input_sentences))
 
 count1 = 0
-for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-french-translation/data/french.txt'):
+for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-french-translation/data/french.txt', encoding='utf-8'):
     count1 +=1
 
     if count1 > NUM_SENTENCES:
@@ -36,7 +36,7 @@ for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-frenc
 
     output_sentences_inputs.append(output_sentence_input)
 
-print(len(output_sentences))
+# print(len(output_sentences))
 
 
 
