@@ -1,6 +1,6 @@
 from tensorflow.keras.layers import Input, Embedding, LSTM
 
-from tokenization import max_out_len
+from tokenization import max_out_len,num_words_output
 from encoder import encoder_states
 # embedding_layer = Embedding(num_words, 100, weights=[embedding_matrix], input_length=max_input_length)
 decoder_inputs_layer = Input(shape=(max_out_len))
