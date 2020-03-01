@@ -48,7 +48,7 @@ for line in open(FRENCH_PATH, encoding='utf-8'):
 
     output_sentences_inputs.append(output_sentence_input)
 
-print(len(output_sentences))
+# print(len(output_sentences))
 
 
 

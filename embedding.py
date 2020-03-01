@@ -12,7 +12,7 @@ if os.path.isfile(GLOVE_DIR):
         print('Glove file exists')
 else:
         print('Glove file does not exist, downloading ...')
-        
+
         url = 'https://www.floydhub.com/api/v1/resources/Av2ThePYtAHXMAuSXEBV8X/glove.6B.100d.txt?content=true&rename=glove6b100dtxt'
 
         r = requests.get(url, stream=True)
