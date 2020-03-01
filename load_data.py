@@ -1,3 +1,9 @@
+import os
+
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+ENGLISH_PATH = os.path.join(BASE_DIR, 'data/english.txt')
+FRENCH_PATH = os.path.join(BASE_DIR, 'data/french.txt')
+
 NUM_SENTENCES = 20000
 
 input_sentences = [] # sentences in the original language as input to the encoder
@@ -8,7 +14,7 @@ output_sentences_inputs = [] # input to the decoder in the translated language
 
 count = 0
 
-for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-french-translation/data/english.txt', encoding='utf-8'):
+for line in open(ENGLISH_PATH, encoding='utf-8'):
     count +=1
 
     if count > NUM_SENTENCES:
@@ -21,7 +27,7 @@ for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-frenc
 # print(len(input_sentences))
 
 count1 = 0
-for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-french-translation/data/french.txt', encoding='utf-8'):
+for line in open(FRENCH_PATH, encoding='utf-8'):
     count1 +=1
 
     if count1 > NUM_SENTENCES:
@@ -36,7 +42,7 @@ for line in open('/home/ghaff/Artificial Intelligence/nlp-projects/english-frenc
 
     output_sentences_inputs.append(output_sentence_input)
 
-# print(len(output_sentences))
+print(len(output_sentences))
 
 
 

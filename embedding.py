@@ -1,6 +1,7 @@
 import numpy as np
 from tokenization import MAX_NUM_WORDS, word2index_inputs
 
+
 EMBEDDING_SIZE = 100
 # dictionary where words are the keys and the corresponding vectors are values
 embeddings_dict = dict()
