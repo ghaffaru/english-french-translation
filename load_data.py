@@ -1,8 +1,14 @@
 import os
 
+import urllib.request
+
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 ENGLISH_PATH = os.path.join(BASE_DIR, 'data/english.txt')
 FRENCH_PATH = os.path.join(BASE_DIR, 'data/french.txt')
+
+url = 'http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg'
+
+urllib.request.urlretrieve(url, os.path.join(BASE_DIR, 'data/image.jpg'))
 
 NUM_SENTENCES = 20000
 

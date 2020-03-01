@@ -1,12 +1,39 @@
 import numpy as np
 from tokenization import MAX_NUM_WORDS, word2index_inputs
+import os
+
+import requests
+from clint.textui import progress
+
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+GLOVE_DIR = os.path.join(BASE_DIR, 'data/glove.6B.100d.txt')
+
+if os.path.isfile(GLOVE_DIR):
+        print('Glove file exists')
+else:
+        print('Glove file does not exist, downloading ...')
+        
+        url = 'https://www.floydhub.com/api/v1/resources/Av2ThePYtAHXMAuSXEBV8X/glove.6B.100d.txt?content=true&rename=glove6b100dtxt'
+
+        r = requests.get(url, stream=True)
+
+        with open(os.path.join(BASE_DIR, 'data/glove.6B.100d.txt'), 'wb') as file:
+
+                raw_content = r.raw.read()
+                total_length = len(raw_content)
+
+                for ch in progress.bar(r.iter_content(chunk_size = 2391975), expected_size=(total_length/1024) + 1):
+    
+                        if ch:
+
+                                file.write(ch)
 
 
 EMBEDDING_SIZE = 100
 # dictionary where words are the keys and the corresponding vectors are values
 embeddings_dict = dict()
 
-glove_file = open(r'/home/ghaff/Artificial Intelligence/nlp-projects/english-french-translation/data/glove.6B.100d.txt')
+glove_file = open(GLOVE_DIR)
 
 for line in glove_file:
     records = line.split()
