@@ -7,4 +7,4 @@ Install these via command line
 
 ## Run the training loop
 This step requires downloading a precomputed embedding
-``` python train.py
+``` python train.py ```
