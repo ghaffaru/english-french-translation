@@ -9,6 +9,8 @@ model.fit(
     ],
     decoder_targets_one_hot,
     batch_size=64,
-    epochs=2,
+    epochs=20,
     validation_split=0.1
 )
+
+model.save('models/model.h5')
