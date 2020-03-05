@@ -24,4 +24,4 @@ encoder_model = Model(
     encoder_states
 )
 
-encoder_model.save('models/encoder_model.h5')
+# encoder_model.save('models/encoder_model.h5')
