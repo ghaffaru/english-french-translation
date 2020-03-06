@@ -23,5 +23,10 @@ encoder_model = Model(
     encoder_inputs_layer,
     encoder_states
 )
+encoder_model.compile(
+    optimizer='rmsprop',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
 
 # encoder_model.save('models/encoder_model.h5')

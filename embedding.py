@@ -33,7 +33,7 @@ EMBEDDING_SIZE = 100
 # dictionary where words are the keys and the corresponding vectors are values
 embeddings_dict = dict()
 
-glove_file = open(GLOVE_DIR)
+glove_file = open(GLOVE_DIR, encoding='utf8')
 
 for line in glove_file:
     records = line.split()

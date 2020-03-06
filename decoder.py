@@ -12,3 +12,7 @@ decoder_inputs_x = decoder_embedding(decoder_inputs_layer)
 decoder_lstm = LSTM(256, return_sequences=True, return_state=True)
 
 decoder_outputs, _, _ = decoder_lstm(decoder_inputs_x, initial_state=encoder_states)
+
+decoder_dense = Dense(num_words_output, activation='softmax')
+decoder_outputs = decoder_dense(decoder_outputs)
+

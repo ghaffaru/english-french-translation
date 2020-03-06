@@ -11,7 +11,7 @@ decoder_targets_one_hot = np.zeros(
     ),
     dtype='uint8'
 )
-
+# print(decoder_targets_one_hot.shape)
 for i, d in enumerate(decoder_output_sequences):
     for t, word in enumerate(d):
         decoder_targets_one_hot[i, t, word] = 1

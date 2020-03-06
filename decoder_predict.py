@@ -31,5 +31,9 @@ decoder_model = Model(
     [decoder_inputs_single] + decoder_states_inputs,
     [decoder_outputs] + decoder_states
 )
-
-# decoder_model.save('models/decoder_model.h5')
+decoder_model.compile(
+    optimizer='rmsprop',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
+decoder_model.save('models/decoder_model.h5')
