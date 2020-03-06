@@ -11,3 +11,6 @@ This step requires downloading a precomputed embedding
 
 ``` python train.py ```
 
+## Translate new Sentence
+
+``` python translate.py ```
